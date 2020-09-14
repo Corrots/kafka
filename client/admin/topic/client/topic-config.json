@@ -1,0 +1,236 @@
+[
+  {
+    "Name": "compression.type",
+    "Value": "producer",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "leader.replication.throttled.replicas",
+    "Value": "",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "message.downconversion.enable",
+    "Value": "true",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "min.insync.replicas",
+    "Value": "1",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "segment.jitter.ms",
+    "Value": "0",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "cleanup.policy",
+    "Value": "delete",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "flush.ms",
+    "Value": "9223372036854775807",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "follower.replication.throttled.replicas",
+    "Value": "",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "segment.bytes",
+    "Value": "1073741824",
+    "ReadOnly": false,
+    "Default": false,
+    "Source": 4,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "retention.ms",
+    "Value": "604800000",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "flush.messages",
+    "Value": "9223372036854775807",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "message.format.version",
+    "Value": "2.4-IV1",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "file.delete.delay.ms",
+    "Value": "60000",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "max.compaction.lag.ms",
+    "Value": "9223372036854775807",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "max.message.bytes",
+    "Value": "1000012",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "min.compaction.lag.ms",
+    "Value": "0",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "message.timestamp.type",
+    "Value": "CreateTime",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "preallocate",
+    "Value": "false",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "min.cleanable.dirty.ratio",
+    "Value": "0.5",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "index.interval.bytes",
+    "Value": "4096",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "unclean.leader.election.enable",
+    "Value": "false",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "retention.bytes",
+    "Value": "-1",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "delete.retention.ms",
+    "Value": "86400000",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "segment.ms",
+    "Value": "604800000",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "message.timestamp.difference.max.ms",
+    "Value": "9223372036854775807",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  },
+  {
+    "Name": "segment.index.bytes",
+    "Value": "10485760",
+    "ReadOnly": false,
+    "Default": true,
+    "Source": 5,
+    "Sensitive": false,
+    "Synonyms": []
+  }
+]
