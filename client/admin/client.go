@@ -1,4 +1,4 @@
-package client
+package admin
 
 import (
 	"log"
@@ -11,11 +11,11 @@ var (
 	addrs = []string{"192.168.56.25:9092"}
 )
 
-type AdminCluster struct {
+type Admin struct {
 	Client sarama.ClusterAdmin
 }
 
-func NewAdminCluster() *AdminCluster {
+func NewAdminCluster() *Admin {
 	config := sarama.NewConfig()
 	//等待服务器所有副本都保存成功后的响应
 	config.Producer.RequiredAcks = sarama.WaitForAll
@@ -29,10 +29,10 @@ func NewAdminCluster() *AdminCluster {
 	if err != nil {
 		log.Fatal(err)
 	}
-	return &AdminCluster{Client: clusterAdmin}
+	return &Admin{Client: clusterAdmin}
 }
 
-func (c *AdminCluster) CreateTopic(topicName string) error {
+func (a *Admin) CreateTopic(topicName string) error {
 	detail := &sarama.TopicDetail{
 		// topic分区数
 		NumPartitions: 1,
@@ -41,38 +41,42 @@ func (c *AdminCluster) CreateTopic(topicName string) error {
 		ReplicaAssignment: nil,
 		ConfigEntries:     nil,
 	}
-	//defer c.Client.Close()
-	return c.Client.CreateTopic(topicName, detail, false)
+	//defer a.Client.Close()
+	return a.Client.CreateTopic(topicName, detail, false)
 }
 
-func (c *AdminCluster) ListTopic() map[string]sarama.TopicDetail {
-	topics, err := c.Client.ListTopics()
+func (a *Admin) CreatePartition(topic string) error {
+	return a.Client.CreatePartitions(topic, 2, nil, false)
+}
+
+func (a *Admin) ListTopic() map[string]sarama.TopicDetail {
+	topics, err := a.Client.ListTopics()
 	if err != nil {
 		log.Fatal(err)
 	}
-	//defer c.Client.Close()
+	//defer a.Client.Close()
 	return topics
 }
 
-func (c *AdminCluster) DeleteTopic(topicName string) error {
-	//defer c.Client.Close()
-	return c.Client.DeleteTopic(topicName)
+func (a *Admin) DeleteTopic(topicName string) error {
+	//defer a.Client.Close()
+	return a.Client.DeleteTopic(topicName)
 }
 
-func (c *AdminCluster) GetTopicDescription(topicName string) (*sarama.TopicMetadata, error) {
-	//defer c.Client.Close()
-	topics, err := c.Client.DescribeTopics([]string{topicName})
+func (a *Admin) GetTopicDescription(topicName string) (*sarama.TopicMetadata, error) {
+	//defer a.Client.Close()
+	topics, err := a.Client.DescribeTopics([]string{topicName})
 	if err != nil {
 		return nil, err
 	}
 	return topics[0], nil
 }
 
-func (c *AdminCluster) GetTopicConfig(topicName string) ([]sarama.ConfigEntry, error) {
-	//defer c.Client.Close()
+func (a *Admin) GetTopicConfig(topicName string) ([]sarama.ConfigEntry, error) {
+	//defer a.Client.Close()
 	configResource := sarama.ConfigResource{
 		Type: sarama.TopicResource,
 		Name: topicName,
 	}
-	return c.Client.DescribeConfig(configResource)
+	return a.Client.DescribeConfig(configResource)
 }
