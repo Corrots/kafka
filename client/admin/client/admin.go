@@ -7,10 +7,6 @@ import (
 	"github.com/Shopify/sarama"
 )
 
-const (
-	topic = "corrots-topic"
-)
-
 var (
 	addrs = []string{"192.168.56.25:9092"}
 )
