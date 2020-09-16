@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/corrots/kafka/client/producer/sync"
+	"github.com/corrots/kafka/client/producer/client/sync"
 )
 
 func main() {
