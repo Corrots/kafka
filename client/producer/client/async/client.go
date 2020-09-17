@@ -24,6 +24,7 @@ func NewProducer() (*Producer, error) {
 	// Flush batches every 500ms
 	config.Producer.Flush.Frequency = 500 * time.Millisecond
 	asyncProducer, err := sarama.NewAsyncProducer(addr, config)
+	//config.Consumer.IsolationLevel = sarama.ReadCommitted
 	if err != nil {
 		return nil, err
 	}
