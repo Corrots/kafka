@@ -41,9 +41,9 @@ Consumer 程序有个“位移”的概念，表示的是这个 Consumer 当前�
 Producer端可通过幂等性（Idempotence）和事务（Transaction）的机制，提供了这种精确的消息保障。
 
 #### 幂等性
-props.put(“enable.idempotence”, ture)   启用幂等性；
-	* 它只能保证单分区上的幂等性，即一个幂等性 Producer 能够保证某个主题的一个分区上不出现重复消息，无法实现多个分区的幂等性。
-	* 它只能实现单会话上的幂等性，不能实现跨会话的幂等性。这里的会话，你可以理解为 Producer 进程的一次运行。当你重启了 Producer 进程之后，这种幂等性保证就丧失了。
+> props.put(“enable.idempotence”, ture) - 启用幂等性；
+* 它只能保证单分区上的幂等性，即一个幂等性 Producer 能够保证某个主题的一个分区上不出现重复消息，无法实现多个分区的幂等性。
+* 它只能实现单会话上的幂等性，不能实现跨会话的幂等性。这里的会话，你可以理解为 Producer 进程的一次运行。当你重启了 Producer 进程之后，这种幂等性保证就丧失了。
 
 #### 事务
 * props.put(“enable.idempotence”, ture)
