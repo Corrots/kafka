@@ -16,9 +16,13 @@ type Producer struct {
 func NewProducer() (*Producer, error) {
 	addr := []string{"192.168.56.25:9092"}
 	config := sarama.NewConfig()
-	config.Producer.RequiredAcks = sarama.WaitForLocal       // Only wait for the leader to ack
-	config.Producer.Compression = sarama.CompressionSnappy   // Compress messages
-	config.Producer.Flush.Frequency = 500 * time.Millisecond // Flush batches every 500ms
+	config.Metadata.Retry.Max = 5
+	// Only wait for the leader to ack 仅到leader收到消息后committed返回确认信号即认为发送成功
+	config.Producer.RequiredAcks = sarama.WaitForLocal
+	// Compress messages 压缩消息
+	config.Producer.Compression = sarama.CompressionSnappy
+	// Flush batches every 500ms
+	config.Producer.Flush.Frequency = 500 * time.Millisecond
 	asyncProducer, err := sarama.NewAsyncProducer(addr, config)
 	if err != nil {
 		return nil, err
